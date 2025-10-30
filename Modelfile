@@ -1,0 +1,4 @@
+# Modelfile — small local wrapper model
+FROM llama3
+PARAMETER temperature 0.7
+TEMPLATE "{{ .Prompt }}"
