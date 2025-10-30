@@ -18,7 +18,10 @@ COPY Modelfile /app/Modelfile
 RUN /usr/local/bin/ollama create mini-test -f /app/Modelfile || true
 
 # Expose Ollama port
+# Expose Ollama’s default port
 EXPOSE 11434
 
-# Start service
-CMD ["/usr/local/bin/ollama", "serve", "--host", "0.0.0.0"]
+# Start Ollama server (no --host flag)
+CMD ["/usr/local/bin/ollama", "serve"]
+
+
